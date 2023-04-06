@@ -1,0 +1,100 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{#with main}}
+    <main>
+        <section>
+            {{> title data="Work history" big=true}}
+            <div>
+                <ul>
+                    {{#each works}}
+                    <li>
+                        <div>{{position}}</div>
+
+                        <br>
+
+                        <div>
+                            {{duration.from}} -
+                            {{#if duration.to}}
+                            {{duration.to}}
+                            {{else}} досі працюємо
+                            {{/if}}
+                        </div>
+
+                        <br>
+
+                        <div>
+                            {{#unless company.url includeZero=true}}
+                            <b>{{company.name}}</b>
+
+                            {{else}}
+
+                            {{> link text=company.name href=company.url blank=true noLine=true}}
+                            {{/unless}}
+
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <div>
+                            <strong>Projects - {{projectAmount}}</strong>
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <ul>
+                                {{#each projects}}
+                                <li>
+                                    <div>{{name}}</div>
+                                    <div>
+                                        {{> link text=name href=url blank=true noLine=true}}
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <p>About: {{about}}</p>
+                                    </div>
+                                    <br>
+                                    <div><em>Project stacks ({{../stackAmount}})</em></div>
+                                    <br>
+                                    <div>
+                                        <ul>
+                                            {{#each stacks}}
+                                            <li>
+                                                {{name}}
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <em>Project awards ({{../awardsAmount}})</em>
+                                    </div>
+                                    <br>
+                                    <div>
+                                        <ul>
+                                            {{#each awards}}
+                                            <li>
+                                                {{name}}
+                                            </li>
+                                            {{/each}}
+                                        </ul>
+                                    </div>
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+
+                    </li>
+                    <br>
+                    {{/each}}
+                </ul>
+            </div>
+        </section>
+    </main>
+    {{/with}}
+</div>
