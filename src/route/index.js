@@ -683,6 +683,16 @@ router.get('/web', function (req, res) {
     },
   })
 })
+
+router.get('/bootstrap', function (req, res) {
+
+  res.render('bootstrap', {
+
+    layout: 'basic',
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 // ================================================================
 
 // Підключаємо роутер до бек-енду
