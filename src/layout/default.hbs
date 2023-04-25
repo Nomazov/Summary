@@ -11,43 +11,47 @@
     </title>
     <meta charset='utf-8' />
     <link href='css/index.css' rel='stylesheet' />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="p-5">
     {{#with header}}
     <header>
-        <div>
+        <div class="mb-2">
             <h1>{{name.firstname}} {{name.lastname}}</h1>
         </div>
-        <div>
+        <div class="mb-2">
             <b>{{position}}</b>
-        </div>
-        <br>
-        <div>
-            <em>
-                {{salary}}
-            </em>
-        </div>
-        <br>
-        <div>
-            <em>
-                {{adress}}
-            </em>
-        </div>
-        <br>
-        <hr>
+
+            <div class="mb-2">
+                <em>
+                    {{salary}}
+                </em>
+            </div>
+
+            <div class="mb-2">
+                <em>
+                    {{adress}}
+                </em>
+            </div>
+
     </header>
     {{/with}}
 
-    {{> nav}}
+    <hr class="my-5">
+
+    <div class="mb-5">
+        {{> nav}}
+    </div>
 
     {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
     {{{body}}}
 
-    <hr>
-    <br>
-    {{> footer}}
+    <hr class="my-5">
 
+    {{> footer}}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
