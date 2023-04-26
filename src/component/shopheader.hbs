@@ -2,9 +2,15 @@
 <div class="card mb-5">
     <div class="nav nav-tabs p-3">
         {{#each links}}
+        {{#if @last}}
+        <div class="nav-item ms-3 disabled">
+            <a href="{{href}}" target="_blank">{{text}}</a>
+        </div>
+        {{else}}
         <div class="nav-item ms-3">
             <a href="{{href}}" target="_blank">{{text}}</a>
         </div>
+        {{/if}}
         {{/each}}
     </div>
 </div>

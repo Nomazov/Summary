@@ -1,0 +1,52 @@
+<main>
+
+    {{> breadcrumb}}
+
+    <section>
+        {{#with newsData}}
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-4">
+                    <img src="{{photo}}" alt="Photo">
+                </div>
+                <div>
+                    {{#with head}}
+                    {{> title data=heading big=true}}
+                    <span>{{description}}</span>
+                    {{/with}}
+                </div>
+            </div>
+            {{#each body}}
+            <div class="mt-4">
+                {{> title data=title}}
+                <span>{{text}}</span>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    <hr class="my-5">
+
+    <section>
+        {{#with newsOtherBlock}}
+        <div class="text-center mb-4">
+            {{> title data=title}}
+        </div>
+        <div class="row">
+            {{#each cards}}
+            {{> shoppost}}
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+
+
+    <hr class="my-5">
+
+    <section>
+        {{> shopaction}}
+    </section>
+
+    <hr class="mt-5 mb-3">
+
+</main>
