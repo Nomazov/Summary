@@ -1,0 +1,11 @@
+{{#with navigation}}
+<div class="card mb-5">
+    <div class="nav nav-tabs p-3">
+        {{#each links}}
+        <div class="nav-item ms-3">
+            <a href="{{href}}" target="_blank">{{text}}</a>
+        </div>
+        {{/each}}
+    </div>
+</div>
+{{/with}}
