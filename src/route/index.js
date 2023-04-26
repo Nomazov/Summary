@@ -1252,6 +1252,14 @@ router.get('/bootstrap', function (req, res) {
 
     layout: 'basic',
   })
+})
+
+router.get('/bootstrapform', function (req, res) {
+
+  res.render('bootstrapform', {
+
+    layout: 'basic',
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -1836,7 +1844,7 @@ router.get('/shopproduct', function (req, res) {
           ['id643', 'dark', '999$'],
         ],
       },
-      
+
       param: {
         title: 'Product params',
         list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
@@ -1846,7 +1854,7 @@ router.get('/shopproduct', function (req, res) {
         isError: true,
         text: 'Danger! This is a danger alert — check it out!',
       },
-      
+
     },
 
     goodsOtherBlock: {
