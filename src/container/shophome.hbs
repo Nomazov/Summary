@@ -44,21 +44,7 @@
     <hr class="my-5">
 
     <section>
-        {{#with subscribe}}
-        <div class="card ">
-            <div class="card-body text-bg-dark">
-                <h2 class="mb-3">{{header}}</h2>
-                <p class="m-0">{{description}}</p>
-                {{#each buttons}}
-                <div class="mt-2">
-                    <a href="{{link}}" target="_blank">
-                        <button class="btn btn-primary"> {{text}}</button>
-                    </a>
-                </div>
-                {{/each}}
-            </div>
-        </div>
-        {{/with}}
+        {{> subscribe}}
     </section>
 
     <hr class="my-5">
