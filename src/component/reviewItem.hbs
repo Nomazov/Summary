@@ -1,0 +1,62 @@
+<div class="card p-3 mb-5">
+    <div class="card mb-3">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                {{#with title}}
+                <p class="mb-0"><strong>{{userName}}</strong></p>
+                <p class="mb-2">{{caption}}</p>
+                <p>{{date}}</p>
+                {{/with}}
+            </li>
+            <li class="list-group-item">
+                {{#with reviewBody}}
+                <div>
+                    {{#with seller}}
+                    <p>{{title}}: {{value}}</p>
+                    {{/with}}
+                </div>
+                <div>
+                    {{#with rating}}
+                    <p>{{title}}: {{value}}</p>
+                    {{/with}}
+                </div>
+                <div>
+                    {{#each text}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+                <div>
+                    {{#with advantages}}
+                    <p class="mb-0"><strong>{{title}}</strong></p>
+                    <p>{{text}}</p>
+                    {{/with}}
+                </div>
+                <div>
+                    {{#with disadvantages}}
+                    <p class="mb-0"><strong>{{title}}</strong></p>
+                    <p>{{text}}</p>
+                    {{/with}}
+                </div>
+                <div>
+                    {{#each images}}
+                    <img src="{{this}}" alt="img">
+                    {{/each}}
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="row justify-content-end">
+        {{#each coments}}
+        <div class="col-11 mb-3">
+            <div class="card p-2">
+                <p class="mb-2"><strong>{{userName}}</strong></p>
+                <p class="mb-2">{{date}}</p>
+                <p class="mb-2">{{text}}</p>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/with}}
+
+</div>
