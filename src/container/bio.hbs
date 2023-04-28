@@ -2,33 +2,31 @@
     <main>
         <section>
             {{> title data=page.title big=true}}
-            <hr>
-            <br>
 
-            <div><em>Name:</em> {{name}}</div>
-            <div><em>Birthdate:</em> {{birthdate}}</div>
-            <div><em>Birthplace:</em> {{birthplace}}</div>
-            <div><em>Deathdate:</em> {{deathdate}}</div>
-            <div><em>Deathplace:</em> {{deathplace}}</div>
-            <div><em>Nationality:</em> {{nationality}}</div>
-            <div><em>Occupation:</em> {{occupation}}</div>
-            <br>
+            <hr class="my-5">
 
-            <div>
+            <div class="mb-2"><em>Name:</em> {{name}}</div>
+            <div class="mb-2"><em>Birthdate:</em> {{birthdate}}</div>
+            <div class="mb-2"><em>Birthplace:</em> {{birthplace}}</div>
+            <div class="mb-2"><em>Deathdate:</em> {{deathdate}}</div>
+            <div class="mb-2"><em>Deathplace:</em> {{deathplace}}</div>
+            <div class="mb-2"><em>Nationality:</em> {{nationality}}</div>
+            <div class="mb-5"><em>Occupation:</em> {{occupation}}</div>
+
+            <div class="mb-2">
                 <em>known_for:</em>
                 <ul>
                     {{#each known_for}}
-                    <li>{{this}}</li>
+                    <li class="mb-2">{{this}}</li>
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Education:</em>
+            <div class="mb-2">
+                <em class="mb-2">Education:</em>
                 <ul>
                     {{#each education}}
-                    <li>
+                    <li class="mb-2">
                         <div><em>Degree:</em> {{degree}}</div>
                         <div><em>Field:</em> {{field}}</div>
                         <div><em>Institution:</em> {{institution}}</div>
@@ -37,13 +35,12 @@
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Notable Publications:</em>
+            <div class="mb-2">
+                <em class="mb-2">Notable Publications:</em>
                 <ul>
                     {{#each notable_publications}}
-                    <li>
+                    <li class="mb-2">
                         <div><em>Title:</em> {{title}}</div>
                         <div><em>Year:</em> {{year}}</div>
                         <div><em>Publisher:</em> {{publisher}}</div>
@@ -51,13 +48,12 @@
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Partners:</em>
+            <div class="mb-2">
+                <em class="mb-2">Partners:</em>
                 <ul>
                     {{#each partners}}
-                    <li>
+                    <li class="mb-2">
                         <div><em>Name:</em> {{name}}</div>
                         <div><em>Relationship:</em> {{relationship}}</div>
                         <div><em>Years:</em> {{years}}</div>
@@ -65,58 +61,52 @@
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Awards:</em>
+            <div class="mb-2">
+                <em class="mb-2">Awards:</em>
                 <ul>
                     {{#each awards}}
-                    <li>
+                    <li class="mb-2">
                         <div><em>Title:</em> {{title}}</div>
                         <div><em>Year:</em> {{year}}</div>
                         <div><em>Description:</em> {{description}}</div>
                     </li>
                     {{/each}}
                 </ul>
-
             </div>
-            <br>
 
-            <div>
-                <em>Influences:</em>
+            <div class="mb-2">
+                <em class="mb-2">Influences:</em>
                 <ul>
                     {{#each influences}}
-                    <li>{{this}}</li>
+                    <li class="mb-2">{{this}}</li>
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Influenced:</em>
+            <div class="mb-2">
+                <em class="mb-2">Influenced:</em>
                 <ul>
                     {{#each influenced}}
-                    <li>{{this}}</li>
+                    <li class="mb-2">{{this}}</li>
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Quotes:</em>
+            <div class="mb-2">
+                <em class="mb-2">Quotes:</em>
                 <ul>
                     {{#each quotes}}
-                    <li>{{this}}</li>
+                    <li class="mb-2">{{this}}</li>
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
-                <em>Major Discoveries:</em>
+            <div class="mb-2">
+                <em class="mb-2">Major Discoveries:</em>
                 <ul>
                     {{#each major_discoveries}}
-                    <li>
+                    <li class="mb-2">
                         <div><em>Title:</em> {{title}}</div>
                         <div><em>Year:</em> {{year}}</div>
                         <div><em>Description:</em> {{description}}</div>
@@ -124,21 +114,18 @@
                     {{/each}}
                 </ul>
             </div>
-            <br>
 
-            <div>
+            <div class="mb-2">
                 {{#with contributions}}
-                <em>Contributions:</em>
-                <br>
-                <br>
-                <div><em>Title:</em> {{title}}</div>
-                <div><em>Description:</em> {{description}}</div>
-                <div><em>Year:</em> {{year}}</div>
-                <div><em>Field:</em> {{field}}</div>
+                <em class="mb-2">Contributions:</em>
+                <div class="mb-2"><em>Title:</em> {{title}}</div>
+                <div class="mb-2"><em>Description:</em> {{description}}</div>
+                <div class="mb-2"><em>Year:</em> {{year}}</div>
+                <div class="mb-2"><em>Field:</em> {{field}}</div>
                 {{/with}}
             </div>
         </section>
-        <hr>
-        <br>
+        <hr class="my-5">
+
     </main>
 </div>

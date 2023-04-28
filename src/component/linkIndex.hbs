@@ -1,0 +1,17 @@
+{{#if isSuccess}}
+<div class="mb-2">
+    <a href="{{link}}" target="_blank">
+        <button class="btn btn-success btn-lg text-capitalize">
+            {{name}}
+        </button>
+    </a>
+</div>
+{{else}}
+<div class="mb-2">
+    <a href="{{link}}" target="_blank">
+        <button class="btn btn-outline-primary btn-lg text-capitalize">
+            {{name}}
+        </button>
+    </a>
+</div>
+{{/if}}

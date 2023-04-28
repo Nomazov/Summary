@@ -1,101 +1,104 @@
-<div>
-    <main>
-        {{> title big data=name}}
-        <hr>
-        <br>
-        <section>
-            <em>{{name}}</em> - {{description}}
+<main>
+    {{> title big data=name}}
+    <hr class="my-5">
+    <section class="mb-5">
+        <p><em>{{name}}</em> - {{description}}</p>
 
-            <div>
-                {{#with history}}
-                <em>Year</em> - {{year}}
-                <br>
-                <em>Founder</em> - {{founder}}
-                {{/with}}
-            </div>
-            <br>
-            <div>
-                <em>Types:</em>
-                <ul>
-                    {{#each types}}
-                    <li>
-                        <span class="badge text-bg-secondary">{{this}}</span>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <br>
-            <div>
-                {{#with syntax}}
-                <em>Syntax:</em>
-                <br>
-                <ul>
-                    <em>Variables:</em>
+        <div class="mb-2">
+            {{#with history}}
+            <p><em class="mb-2">Year</em> - {{year}}</p>
+            <p><em>Founder</em> - {{founder}}</p>
+            {{/with}}
+        </div>
+
+        <div class="mb-2">
+            <p><em>Types:</em></p>
+            <ul>
+                {{#each types}}
+                <li class="mb-2">
+                    <span class="badge text-bg-secondary">{{this}}</span>
+                </li>
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            {{#with syntax}}
+            <p><em>Syntax:</em></p>
+            <ul>
+                <p><em>Variables:</em>
                     {{#each variables}}
                     <span class="badge rounded-pill text-bg-primary">{{this}}</span>
                     {{/each}}
-                    <br>
-                    <em>Functions:</em>
+                </p>
+
+                <p><em>Functions:</em>
                     {{#each functions}}
                     <span class="badge rounded-pill text-bg-success">{{this}}</span>
                     {{/each}}
-                    <br>
-                    <em>Conditionals:</em>
+                </p>
+
+                <p><em>Conditionals:</em>
                     {{#each conditionals}}
                     <span class="badge rounded-pill text-bg-warning">{{this}}</span>
                     {{/each}}
-                    <br>
-                    <em>Loops:</em>
+                </p>
+
+                <p><em>Loops:</em>
                     {{#each loops}}
                     <span class="badge rounded-pill text-bg-info">{{this}}</span>
                     {{/each}}
-                    <br>
-                    <em>Classes:</em>
+                </p>
+
+                <p><em>Classes:</em>
                     {{#each classes}}
                     <span class="badge rounded-pill text-bg-light">{{this}}</span>
                     {{/each}}
-                </ul>
-                {{/with}}
-            </div>
-            <br>
-            <div>
-                <em>Features: </em>
+                </p>
+            </ul>
+            {{/with}}
+        </div>
+
+        <div>
+            <p><em>Features: </em>
                 {{#each features}}
                 <span class="badge text-bg-light">{{this}}</span>
                 {{/each}}
-            </div>
-            <br>
-            <div>
-                <em>Libraries:</em>
-                <ul>
-                    {{#each libraries}}
-                    <li>
-                        <span class="badge rounded-pill text-bg-secondary">{{this}}</span>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-            <br>
-            <div>
-                <em>Tools:</em>
+            </p>
+        </div>
+
+        <div>
+            <p><em>Libraries:</em>
+            <ul>
+                {{#each libraries}}
+                <li class="mb-2">
+                    <span class="badge rounded-pill text-bg-secondary">{{this}}</span>
+                </li>
+                {{/each}}
+            </ul>
+            </p>
+        </div>
+
+        <div>
+            <p><em>Tools:</em>
                 {{#each tools}}
                 <span class="badge rounded-pill text-bg-info">{{this}}</span>
                 {{/each}}
-            </div>
-            <br>
-            <div>
-                <em>Community:</em>
-                <ul>
-                    {{#each community}}
-                    <li>
-                        <span class="badge text-bg-warning">{{name}}</span> - <button type="button"
-                            class="btn btn-link">{{type}}</button>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </section>
-        <hr>
-        <br>
-    </main>
-</div>
+            </p>
+        </div>
+
+        <div>
+            <p><em>Community:</em>
+            <ul>
+                {{#each community}}
+                <li class="mb-2">
+                    <span class="badge text-bg-warning">{{name}}</span> - <button type="button"
+                        class="btn btn-link">{{type}}</button>
+                </li>
+                {{/each}}
+            </ul>
+            </p>
+        </div>
+    </section>
+    <hr class="my-5">
+</main>

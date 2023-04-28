@@ -1,293 +1,286 @@
-<div>
-    <main>
-        <hr>
-        <br>
-        <section>
-            {{> title big data=page.title}}
+<main>
+    <hr class="my-5">
+    <section class="mb-5">
+        {{> title big data=page.title}}
 
+        <div class="mb-5">
+            <p>{{make}} {{model}}</p>
+            <p>Year: {{year}}</p>
+            <p>Color: {{color}}</p>
+        </div>
+        <div class="mb-5">
+            {{#with features}}
+            <p><em>Features:</em></p>
             <div>
-                {{make}} {{model}}
-                <br>
-                Year: {{year}}
-                <br>
-                Color: {{color}}
-            </div>
-            <div>
-                {{#with features}}
-                <em>Features:</em>
-                <div>
-                    <ul>
-                        <li>
-                            {{#with interior}}
-                            <em>Interior:</em>
-                            <ul>
-                                <em>Seats:</em>
-                                {{#with seats}}
-                                <li>
-                                    Material: <span class="badge text-bg-secondary">{{material}}</span>
-                                </li>
-                                <li>
-                                    Color: <span class="badge text-bg-secondary">{{color}}</span>
-                                </li>
-                                <li>
-                                    Heated: {{#if heated includeZero=true}}<span class="badge text-bg-success">With
-                                        heated</span> {{else}}
-                                    Material: <span class="badge text-bg-danger">Without heated</span>
-                                    {{/if}}
-                                </li>
-                                <li>
-                                    Ventilated: {{#if ventilated includeZero=true}} <span
-                                        class="badge text-bg-success">ventilated</span> {{else}}
-                                    Material: <span class="badge text-bg-danger">Not ventilated</span>
-                                    {{/if}}
-                                </li>
-                                {{/with}}
-                            </ul>
-                            <br>
-                            <ul>
-                                <em>Dashboard:</em>
-                                {{#with dashboard}}
-                                <li>
-                                    Material: <span class="badge text-bg-secondary">{{material}}</span>
-                                </li>
-                                <li>
-                                    Color: <span class="badge text-bg-secondary">{{color}}</span>
-                                </li>
-                                <li>
-                                    Display:
-                                    {{#with display}}
-                                    <span class="badge text-bg-info">{{type}}</span>, <span
-                                        class="badge text-bg-info">{{size}}</span>, <span
-                                        class="badge text-bg-info">{{resolution}}</span>, <span
-                                        class="badge text-bg-info">{{#if touchscreen includeZero=true}} With touchscreen
-                                        {{else}} Not touchscreen {{/if}}</span>,
-                                    {{/with}}
-                                </li>
-                                {{/with}}
-                            </ul>
-                            <br>
-                            <ul>
-                                <em>Audio: </em>
-                                {{#with audio}}
-                                <li>
-                                    System: <span class="badge text-bg-secondary">{{system}}</span>
-                                </li>
-                                <li>
-                                    Speakers: <span class="badge text-bg-secondary">{{speakers}}</span>
-                                </li>
-                                <li>
-                                    Subwoofer: {{#if subwoofer includeZero=true}} <span class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                <li>
-                                    Bluetooth:{{#if bluetooth includeZero=true}} <span class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                <li>
-                                    USB: {{#if USB includeZero=true}} <span class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                {{/with}}
-                            </ul>
-                            {{/with}}
-                        </li>
-                        <br>
-                        <li>
-                            {{#with exterior}}
-                            <em>Exterior:</em>
-                            <ul>
-                                <em>Wheels:</em>
-                                {{#with wheels}}
-                                <li>
-                                    Size: <span class="badge text-bg-secondary">{{size}}</span>
-                                </li>
-                                <li>
-                                    Type: <span class="badge text-bg-secondary">{{type}}</span>
-                                </li>
-                                <li>
-                                    Color: <span class="badge text-bg-secondary">{{color}}</span>
-                                </li>
-                                {{/with}}
-                            </ul>
-                            <br>
-                            <ul>
-                                <em>Headlights:</em>
-                                {{#with headlights}}
-                                <li>
-                                    Type: <span class="badge text-bg-secondary">{{type}}</span>
-                                </li>
-                                <li>
-                                    Brightness: <span class="badge text-bg-secondary">{{brightness}}</span>
-                                </li>
-                                <li>
-                                    Automatic: {{#if automatic includeZero=true}} <span class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                {{/with}}
-                            </ul>
-                            <br>
-                            <ul>
-                                <em>Sunroof:</em>
-                                {{#with sunroof}}
-                                <li>
-                                    Type: <span class="badge text-bg-secondary">{{type}}</span>
-                                </li>
-                                <li>
-                                    Size: <span class="badge text-bg-secondary">{{size}}</span>
-                                </li>
-                                <li>
-                                    Automatic: {{#if automatic includeZero=true}} <span class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                {{/with}}
-                            </ul>
-                            {{/with}}
-                        </li>
-                        <br>
-                        <li>
-                            {{#with safety}}
-                            <em>Safety:</em>
-                            <ul>
-                                <em>Airbags:</em>
-                                {{#with airbags}}
-                                <li>
-                                    Front: <span class="badge text-bg-secondary">{{front}}</span>
-                                </li>
-                                <li>
-                                    Side: <span class="badge text-bg-secondary">{{side}}</span>
-                                </li>
-                                <li>
-                                    Knee: <span class="badge text-bg-secondary">{{knee}}</span>
-                                </li>
-                                <li>
-                                    Rear: <span class="badge text-bg-secondary">{{rear}}</span>
-                                </li>
-                                {{/with}}
-                            </ul>
-                            <br>
-                            <ul>
-                                <em>Assistance:</em>
-                                {{#with assistance}}
-                                <li>
-                                    Blind Spot Monitoring: {{#if blind_spot_monitoring includeZero=true}} <span
-                                        class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                <li>
-                                    Rear Cross Traffic Alert: {{#if rear_cross_traffic_alert includeZero=true}} <span
-                                        class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                <li>
-                                    Lane Departure Warning: {{#if lane_departure_warning includeZero=true}} <span
-                                        class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                <li>
-                                    Adaptive Cruise Control: {{#if adaptive_cruise_control includeZero=true}} <span
-                                        class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                <li>
-                                    Collision Warning: {{#if collision_warning includeZero=true}} <span
-                                        class="badge text-bg-success">
-                                        Yes</span>
-                                    {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
-                                </li>
-                                {{/with}}
-                            </ul>
-                            {{/with}}
-                        </li>
-                    </ul>
-                </div>
-                {{/with}}
-            </div>
-            <div>
-                <em>Engine:</em>
                 <ul>
-                    {{#with engine}}
-                    <li>
-                        Type: <span class="badge text-bg-secondary">{{type}}</span>
-                    </li>
-                    <li>
-                        Displacement: <span class="badge text-bg-secondary">{{displacement}}</span>
-                    </li>
-                    <li>
-                        Horsepower: <span class="badge text-bg-secondary">{{horsepower}}</span>
-                    </li>
-                    <li>
-                        Torque: <span class="badge text-bg-secondary">{{torque}}</span>
-                    </li>
-                    <li>
-                        {{#with transmission}}
-                        Transmission: <span class="badge text-bg-secondary">{{type}}</span>, <span
-                            class="badge text-bg-secondary">{{gears}} gears</span>
-                        {{/with}}
-                    </li>
-                    {{/with}}
-                </ul>
-            </div>
-            <div>
-                <em>Fuel Economy:</em>
-                <ul>
-                    {{#with fuel_economy}}
-                    <li>
-                        City: <span class="badge text-bg-secondary">{{city}}</span>
-                    </li>
-                    <li>
-                        Highway: <span class="badge text-bg-secondary">{{highway}}</span>
-                    </li>
-                    <li>
-                        Combined: <span class="badge text-bg-secondary">{{combined}}</span>
-                    </li>
-                    {{/with}}
-                </ul>
-            </div>
-            <div>
-                <em>Price:</em>
-                <ul>
-                    {{#with price}}
-                    <li>
-                        Base: <span class="badge text-bg-secondary">{{base}}</span>
-                    </li>
-                    <li>
-                        Destination: <span class="badge text-bg-secondary">{{destination}}</span>
-                    </li>
-                    <li>
-                        <em>Options:</em>
-                        <ul>
-                            {{#with options}}
-                            <li>
-                                Navigation: <span class="badge text-bg-secondary">{{navigation}}</span>
+                    <li class="mb-5">
+                        {{#with interior}}
+                        <p><em>Interior:</em></p>
+                        <ul class="mb-4">
+                            <p><em>Seats:</em></p>
+                            {{#with seats}}
+                            <li class="mb-2">
+                                Material: <span class="badge text-bg-secondary">{{material}}</span>
                             </li>
-                            <li>
-                                Moonroof: <span class="badge text-bg-secondary">{{moonroof}}</span>
+                            <li class="mb-2">
+                                Color: <span class="badge text-bg-secondary">{{color}}</span>
                             </li>
-                            <li>
-                                Premium Paint: <span class="badge text-bg-secondary">{{premium_paint}}</span>
+                            <li class="mb-2">
+                                Heated: {{#if heated includeZero=true}}<span class="badge text-bg-success">With
+                                    heated</span> {{else}}
+                                Material: <span class="badge text-bg-danger">Without heated</span>
+                                {{/if}}
+                            </li>
+                            <li class="mb-2">
+                                Ventilated: {{#if ventilated includeZero=true}} <span
+                                    class="badge text-bg-success">ventilated</span> {{else}}
+                                Material: <span class="badge text-bg-danger">Not ventilated</span>
+                                {{/if}}
                             </li>
                             {{/with}}
                         </ul>
+
+                        <ul class="mb-4">
+                            <p><em>Dashboard:</em></p>
+                            {{#with dashboard}}
+                            <li class="mb-2">
+                                Material: <span class="badge text-bg-secondary">{{material}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Color: <span class="badge text-bg-secondary">{{color}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Display:
+                                {{#with display}}
+                                <span class="badge text-bg-info">{{type}}</span>, <span
+                                    class="badge text-bg-info">{{size}}</span>, <span
+                                    class="badge text-bg-info">{{resolution}}</span>, <span
+                                    class="badge text-bg-info">{{#if touchscreen includeZero=true}} With touchscreen
+                                    {{else}} Not touchscreen {{/if}}</span>,
+                                {{/with}}
+                            </li>
+                            {{/with}}
+                        </ul>
+
+                        <ul class="mb-4">
+                            <p><em>Audio: </em></p>
+                            {{#with audio}}
+                            <li class="mb-2">
+                                System: <span class="badge text-bg-secondary">{{system}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Speakers: <span class="badge text-bg-secondary">{{speakers}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Subwoofer: {{#if subwoofer includeZero=true}} <span class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            <li class="mb-2">
+                                Bluetooth:{{#if bluetooth includeZero=true}} <span class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            <li class="mb-2">
+                                USB: {{#if USB includeZero=true}} <span class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            {{/with}}
+                        </ul>
+                        {{/with}}
                     </li>
-                    <br>
-                    <li>
-                        TOTAL: <span class="badge text-bg-secondary">{{total}}</span>
+
+                    <li class="mb-5">
+                        {{#with exterior}}
+                        <p><em>Exterior:</em></p>
+                        <ul class="mb-4">
+                            <p><em>Wheels:</em></p>
+                            {{#with wheels}}
+                            <li class="mb-2">
+                                Size: <span class="badge text-bg-secondary">{{size}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Type: <span class="badge text-bg-secondary">{{type}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Color: <span class="badge text-bg-secondary">{{color}}</span>
+                            </li>
+                            {{/with}}
+                        </ul>
+
+                        <ul class="mb-4">
+                            <p><em>Headlights:</em></p>
+                            {{#with headlights}}
+                            <li class="mb-2">
+                                Type: <span class="badge text-bg-secondary">{{type}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Brightness: <span class="badge text-bg-secondary">{{brightness}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Automatic: {{#if automatic includeZero=true}} <span class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            {{/with}}
+                        </ul>
+
+                        <ul class="mb-4">
+                            <p><em>Sunroof:</em></p>
+                            {{#with sunroof}}
+                            <li class="mb-2">
+                                Type: <span class="badge text-bg-secondary">{{type}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Size: <span class="badge text-bg-secondary">{{size}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Automatic: {{#if automatic includeZero=true}} <span class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            {{/with}}
+                        </ul>
+                        {{/with}}
                     </li>
-                    {{/with}}
+
+                    <li class="mb-5">
+                        {{#with safety}}
+                        <p><em>Safety:</em></p>
+                        <ul class="mb-4">
+                            <p><em>Airbags:</em></p>
+                            {{#with airbags}}
+                            <li class="mb-2">
+                                Front: <span class="badge text-bg-secondary">{{front}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Side: <span class="badge text-bg-secondary">{{side}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Knee: <span class="badge text-bg-secondary">{{knee}}</span>
+                            </li>
+                            <li class="mb-2">
+                                Rear: <span class="badge text-bg-secondary">{{rear}}</span>
+                            </li>
+                            {{/with}}
+                        </ul>
+
+                        <ul class="mb-4">
+                            <p><em>Assistance:</em></p>
+                            {{#with assistance}}
+                            <li class="mb-2">
+                                Blind Spot Monitoring: {{#if blind_spot_monitoring includeZero=true}} <span
+                                    class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            <li class="mb-2">
+                                Rear Cross Traffic Alert: {{#if rear_cross_traffic_alert includeZero=true}} <span
+                                    class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            <li class="mb-2">
+                                Lane Departure Warning: {{#if lane_departure_warning includeZero=true}} <span
+                                    class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            <li class="mb-2">
+                                Adaptive Cruise Control: {{#if adaptive_cruise_control includeZero=true}} <span
+                                    class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            <li class="mb-2">
+                                Collision Warning: {{#if collision_warning includeZero=true}} <span
+                                    class="badge text-bg-success">
+                                    Yes</span>
+                                {{else}} <span class="badge text-bg-danger">No </span>{{/if}}
+                            </li>
+                            {{/with}}
+                        </ul>
+                        {{/with}}
+                    </li>
                 </ul>
             </div>
+            {{/with}}
+        </div>
+        <div class="mb-5">
+            <p><em>Engine:</em></p>
+            <ul class="mb-4">
+                {{#with engine}}
+                <li class="mb-2">
+                    Type: <span class="badge text-bg-secondary">{{type}}</span>
+                </li>
+                <li class="mb-2">
+                    Displacement: <span class="badge text-bg-secondary">{{displacement}}</span>
+                </li>
+                <li class="mb-2">
+                    Horsepower: <span class="badge text-bg-secondary">{{horsepower}}</span>
+                </li>
+                <li class="mb-2">
+                    Torque: <span class="badge text-bg-secondary">{{torque}}</span>
+                </li>
+                <li class="mb-2">
+                    {{#with transmission}}
+                    Transmission: <span class="badge text-bg-secondary">{{type}}</span>, <span
+                        class="badge text-bg-secondary">{{gears}} gears</span>
+                    {{/with}}
+                </li>
+                {{/with}}
+            </ul>
+        </div>
+        <div class="mb-5">
+            <p><em>Fuel Economy:</em></p>
+            <ul>
+                {{#with fuel_economy}}
+                <li class="mb-2">
+                    City: <span class="badge text-bg-secondary">{{city}}</span>
+                </li>
+                <li class="mb-2">
+                    Highway: <span class="badge text-bg-secondary">{{highway}}</span>
+                </li>
+                <li class="mb-2">
+                    Combined: <span class="badge text-bg-secondary">{{combined}}</span>
+                </li>
+                {{/with}}
+            </ul>
+        </div>
+        <div class="mb-5">
+            <p><em>Price:</em></p>
+            <ul>
+                {{#with price}}
+                <li class="mb-2">
+                    Base: <span class="badge text-bg-secondary">{{base}}</span>
+                </li>
+                <li class="mb-2">
+                    Destination: <span class="badge text-bg-secondary">{{destination}}</span>
+                </li>
+                <li class="mb-2">
+                    <p><em>Options:</em></p>
+                    <ul>
+                        {{#with options}}
+                        <li class="mb-2">
+                            Navigation: <span class="badge text-bg-secondary">{{navigation}}</span>
+                        </li>
+                        <li class="mb-2">
+                            Moonroof: <span class="badge text-bg-secondary">{{moonroof}}</span>
+                        </li>
+                        <li class="mb-2">
+                            Premium Paint: <span class="badge text-bg-secondary">{{premium_paint}}</span>
+                        </li>
+                        {{/with}}
+                    </ul>
+                </li>
+                <li class="mb-2">
+                    TOTAL: <span class="badge text-bg-secondary">{{total}}</span>
+                </li>
+                {{/with}}
+            </ul>
+        </div>
 
-        </section>
-        <hr>
-        <br>
-    </main>
-</div>
+    </section>
+    <hr class="my-5">
+</main>
