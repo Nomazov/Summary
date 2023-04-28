@@ -1250,7 +1250,7 @@ router.get('/bootstrap', function (req, res) {
 
   res.render('bootstrap', {
 
-    layout: 'basic',
+    layout: 'bootstrap',
   })
 })
 
