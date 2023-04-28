@@ -5,54 +5,49 @@
         <section>
             {{#with program}}
             {{> title data="Excursion Program" big=true}}
-            <br>
             <div>
                 {{#with excursion}}
-                <div><em>Name:</em> {{name}}</div>
-                <br>
-                <div>
+                <div class="mb-2"><em>Name:</em> {{name}}</div>
+                <div class="mb-2">
                     <em>Location:</em>
                     {{#with location}}
                     <div><em>City:</em> {{city}}</div>
                     <div><em>Country:</em> {{country}}</div>
                     {{/with}}
                 </div>
-                <br>
-                <div><em>Date:</em> {{date}}</div>
-                <br>
-                <div><em>Program:</em>
+
+                <div class="mb-2"><em>Date:</em> {{date}}</div>
+                <div class="mb-2"><em>Program:</em>
                     <ul>
                         {{#each program}}
-                        <li>
-                            <div><em>Name:</em> {{name}}</div>
-                            <div><em>Type:</em> {{type}}</div>
-                            <div><em>Duration:</em> {{duration}}</div>
-                            <br>
+                        <li class="mb-4">
+                            <div class="mb-2"><em>Name:</em> {{name}}</div>
+                            <div class="mb-2"><em>Type:</em> {{type}}</div>
+                            <div class="mb-2"><em>Duration:</em> {{duration}}</div>
+
                             <div>
                                 {{#with details}}
-                                <em>Details:</em>
-                                <br>
+                                <em class="mb-2">Details:</em>
                                 <div>
                                     {{#if museum}}
                                     {{#with museum}}
                                     <em>Museum:</em>
                                     <div><em>Name:</em> {{name}}</div>
 
-                                    <div>
+                                    <div class="mb-2">
                                         {{#with location}}
                                         <div><em>Location:</em> {{address}}</div>
                                         <div><em>City:</em> {{city}}</div>
-                                        <div><em>Country:</em> {{country}}
-                                        </div>
+                                        <div><em>Country:</em> {{country}}</div>
                                         {{/with}}
                                     </div>
-                                    <br>
+
                                     <div>
-                                        <em>Exhibits:</em>
+                                        <em class="mb-2">Exhibits:</em>
                                         <div>
                                             <ul>
                                                 {{#each exhibits}}
-                                                <li>
+                                                <li class="mb-2">
                                                     <div><em>Name:</em> {{name}}</div>
                                                     <div>
                                                         {{#if artist includeZero=null }}
@@ -64,8 +59,8 @@
                                                         {{/if}}
 
                                                     </div>
-                                                    <div><em>Description:</em> {{description}}</div>
-                                                    <div>
+                                                    <div><em class="mb-2">Description:</em> {{description}}</div>
+                                                    <div class="mb-2">
                                                         {{#if audio_guide includeZero=true}}
                                                         <div><em>Audi guide:</em> With audio guide</div>
                                                         {{else}}
@@ -81,11 +76,11 @@
                                     {{/if}}
                                     {{#if venue}}
 
-                                    <div>
+                                    <div class="mb-2">
                                         {{#with venue}}
-                                        <div><em>Venue:</em></div>
-                                        <div><em>Name:</em>{{name}}</div>
-                                        <div>
+                                        <div class="mb-2"><em>Venue:</em></div>
+                                        <div class="mb-2"><em>Name:</em>{{name}}</div>
+                                        <div class="mb-2">
                                             {{#with location}}
                                             <div><em>Location:</em> {{address}}</div>
                                             <div><em>City:</em> {{city}}</div>
@@ -95,12 +90,12 @@
                                         </div>
                                         {{/with}}
                                     </div>
-                                    <br>
-                                    <div>
-                                        <em>Performers:</em>
+
+                                    <div class="mb-2">
+                                        <em class="mb-2">Performers:</em>
                                         <ul>
                                             {{#each performers}}
-                                            <li>
+                                            <li class="mb-2">
                                                 <div><em>Name:</em> {{name}}</div>
                                                 <div><em>Type:</em> {{type}}</div>
                                             </li>
@@ -109,8 +104,8 @@
                                     </div>
 
                                     {{/if}}
-                                    <br>
-                                    <div>
+
+                                    <div class="mb-2">
                                         {{#with guide}}
                                         <em>Guide:</em>
                                         <div><em>Name:</em> {{name}}</div>
@@ -122,8 +117,7 @@
                                 {{/with}}
                             </div>
                         </li>
-                        <br>
-                        <br>
+
                         {{/each}}
                     </ul>
                 </div>
@@ -132,7 +126,7 @@
             </div>
             {{/with}}
         </section>
-        <hr>
-        <br>
+        <hr class="my-5">
+
     </main>
 </div>

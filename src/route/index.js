@@ -45,7 +45,18 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    page: {
+      title: "Main Page",
+    },
+    person: {
+      firstname: "Dmytro",
+      lastname: "Nomazov"
+    },
+    project: "Resume project",
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -474,6 +485,10 @@ router.get('/program', function (req, res) {
 
     layout: 'program',
 
+    page: {
+      title: "Program",
+    },
+
     program: {
       excursion: {
         name: 'Cultural Tour',
@@ -559,6 +574,10 @@ router.get('/web', function (req, res) {
   res.render('web', {
 
     layout: 'web',
+
+    page: {
+      title: "Web",
+    },
 
     web: {
       languages: [
@@ -684,131 +703,6 @@ router.get('/web', function (req, res) {
   })
 })
 
-router.get('/task22', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task22', {
-    page_header: {
-      title: 'InnovaMind',
-      description: 'Welcome to our wonderful community',
-    },
-    section: {
-      about_us: {
-        title_list: {
-          main: 'InnovaMind',
-          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
-        },
-        button: { text: 'Show more' },
-      },
-      advantage: {
-        title: 'Advantage',
-        efficiency: {
-          title: 'Efficiency',
-          sub_title: 'Streamline your software development',
-          description:
-            'Streamline your software development with our innovative platform...',
-          button: 'Show more',
-        },
-        innovation: {
-          title: 'Innovation',
-          sub_title:
-            'Forward-thinking approach to programming',
-          description:
-            ' Stay ahead of the curve with our forward-thinking approach to programming...',
-          button: 'Show more',
-        },
-        collaboration: {
-          title: 'Collaboration',
-          sub_title: 'Connect with like-minded developers',
-          description:
-            'Connect with a community of like-minded developers to share knowledge and insights...',
-          button: 'Show more',
-        },
-      },
-      agreement: {
-        title: 'Terms of use',
-        info: {
-          sub_title: 'Check out our requirements',
-          detail: {
-            text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
-            button: 'Аccept',
-          },
-        },
-      },
-    },
-  })
-  //                  ↑↑ сюди вводимо JSON дані
-})
-
-router.get('/task21', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('task21', {
-    heading: {
-      main: {
-        title: 'JavaScript',
-        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
-        button_text: {
-          solid: 'Open page',
-          outline: 'Add to cart',
-        },
-      },
-      second: {
-        title: 'Stack Overflow',
-        text: 'First-class functions',
-        button_text: {
-          solid: 'Open page',
-          outline: 'Add to cart',
-        },
-      },
-      subblock: {
-        title: 'JavaScript Weekly',
-        text: 'Prototype-based inheritance newsletter',
-        button_text: {
-          solid: 'Open page',
-          outline: 'Add to cart',
-        },
-      },
-    },
-    nested_display: {
-      title: 'HTML',
-      children_display: {
-        title: 'Outdated HTML tags',
-        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
-        button: {
-          text: 'Орen',
-        },
-      },
-      header_text: 'Sections',
-      button: {
-        text: 'Learn more',
-      },
-    },
-    paragraph: {
-      title: 'About modules',
-      text: 'Modules with import/export statements',
-
-      button: {
-        text: 'Open link page',
-        url: 'https://google.com',
-      },
-      list_name: [
-        {
-          text: 'Github',
-          url: 'https://github.com/',
-        },
-        {
-          text: 'Bootstrap',
-          url: 'https://getbootstrap.com/',
-        },
-      ],
-    },
-  })
-  //                  ↑↑ сюди вводимо JSON дані
-})
-
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -816,6 +710,10 @@ router.get('/js', function (req, res) {
   res.render('js', {
 
     layout: 'basic',
+
+    page: {
+      title: "Java Script",
+    },
 
     page: {
       title: 'JavaScript'
@@ -901,6 +799,10 @@ router.get('/car', function (req, res) {
   res.render('car', {
 
     layout: 'basic',
+
+    page: {
+      title: "Car",
+    },
 
     page: {
       title: 'Car'
@@ -1006,6 +908,10 @@ router.get('/mac', function (req, res) {
 
     layout: 'basic',
 
+    page: {
+      title: "MacBook",
+    },
+
     name: 'Apple MacBook Pro',
     description: 'The ultimate notebook for power users',
     price: 1999.99,
@@ -1094,6 +1000,10 @@ router.get('/facebook', function (req, res) {
   res.render('facebook', {
 
     layout: 'basic',
+
+    page: {
+      title: "Facebook",
+    },
 
     name: 'Facebook',
     users: [
@@ -1263,10 +1173,148 @@ router.get('/bootstrapform', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
+router.get('/task22', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task22', {
+
+    page: {
+      title: "Task 2.2",
+    },
+    page_header: {
+      title: 'InnovaMind',
+      description: 'Welcome to our wonderful community',
+    },
+    section: {
+      about_us: {
+        title_list: {
+          main: 'InnovaMind',
+          sub: 'InnovaMind is a forward-thinking startup focused on innovation. We are dedicated to creating efficient and powerful software through the use of first-class functions.',
+        },
+        button: { text: 'Show more' },
+      },
+      advantage: {
+        title: 'Advantage',
+        efficiency: {
+          title: 'Efficiency',
+          sub_title: 'Streamline your software development',
+          description:
+            'Streamline your software development with our innovative platform...',
+          button: 'Show more',
+        },
+        innovation: {
+          title: 'Innovation',
+          sub_title:
+            'Forward-thinking approach to programming',
+          description:
+            ' Stay ahead of the curve with our forward-thinking approach to programming...',
+          button: 'Show more',
+        },
+        collaboration: {
+          title: 'Collaboration',
+          sub_title: 'Connect with like-minded developers',
+          description:
+            'Connect with a community of like-minded developers to share knowledge and insights...',
+          button: 'Show more',
+        },
+      },
+      agreement: {
+        title: 'Terms of use',
+        info: {
+          sub_title: 'Check out our requirements',
+          detail: {
+            text: 'By using or accessing the service, you agree to be bound by the terms and conditions outlined in the agreement.',
+            button: 'Аccept',
+          },
+        },
+      },
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
+router.get('/task21', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('task21', {
+
+    page: {
+      title: "Task 2.1",
+    },
+    heading: {
+      main: {
+        title: 'JavaScript',
+        text: 'JavaScript is a popular high-level, dynamic, and interpreted programming language.',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      second: {
+        title: 'Stack Overflow',
+        text: 'First-class functions',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+      subblock: {
+        title: 'JavaScript Weekly',
+        text: 'Prototype-based inheritance newsletter',
+        button_text: {
+          solid: 'Open page',
+          outline: 'Add to cart',
+        },
+      },
+    },
+    nested_display: {
+      title: 'HTML',
+      children_display: {
+        title: 'Outdated HTML tags',
+        text: 'tags that have been identified as deprecated and not recommended for use in HTML version 5',
+        button: {
+          text: 'Орen',
+        },
+      },
+      header_text: 'Sections',
+      button: {
+        text: 'Learn more',
+      },
+    },
+    paragraph: {
+      title: 'About modules',
+      text: 'Modules with import/export statements',
+
+      button: {
+        text: 'Open link page',
+        url: 'https://google.com',
+      },
+      list_name: [
+        {
+          text: 'Github',
+          url: 'https://github.com/',
+        },
+        {
+          text: 'Bootstrap',
+          url: 'https://getbootstrap.com/',
+        },
+      ],
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+
 router.get('/task31', function (req, res) {
   res.render('task31', {
 
     layout: 'basic',
+
+    page: {
+      title: "Task 3.1",
+    },
+
     button: {
       text: 'Lets start',
       href: 'https://nodejs.org/en/',
@@ -1497,10 +1545,15 @@ router.get('/task31', function (req, res) {
     },
   })
 })
+
 router.get('/shophome', function (req, res) {
 
   res.render('shophome', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Home",
+    },
 
     navigation: {
       links: [
@@ -1788,6 +1841,11 @@ router.get('/shopproduct', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopproduct', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Product",
+    },
+
     navigation: {
       links: [
         {
@@ -2000,6 +2058,11 @@ router.get('/shopnews', function (req, res) {
 
   res.render('shopnews', {
     layout: 'shop',
+
+    page: {
+      title: "Shop News",
+    },
+
     navigation: {
       links: [
         {
@@ -2205,6 +2268,11 @@ router.get('/shoporder', function (req, res) {
 
   res.render('shoporder', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Order",
+    },
+
     navigation: {
       links: [
         {
@@ -2560,9 +2628,6 @@ router.get('/shoporder', function (req, res) {
       ],
     ],
   })
-
-
-  //                  ↑↑ сюди вводимо JSON дані
 })
 
 router.get('/shopcart', function (req, res) {
@@ -2571,6 +2636,11 @@ router.get('/shopcart', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcart', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Cart",
+    },
+
     navigation: {
       links: [
         {
@@ -2816,6 +2886,11 @@ router.get('/shopprofile', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopprofile', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Profile",
+    },
+
     navigation: {
       links: [
         {
@@ -3102,11 +3177,14 @@ router.get('/shopprofile', function (req, res) {
 })
 
 router.get('/shopreview', function (req, res) {
-  // res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopreview', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Review",
+    },
+
     navigation: {
       links: [
         {
@@ -3386,11 +3464,15 @@ router.get('/shopreview', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-
 router.get('/shopcatalog', function (req, res) {
 
   res.render('shopcatalog', {
     layout: 'shop',
+
+    page: {
+      title: "Shop Catalog",
+    },
+
     navigation: {
       links: [
         {
